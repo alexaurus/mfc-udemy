@@ -13,9 +13,9 @@ const mount = (el, { onSignIn, onNavigate, defaultHistory, initialPath }) => {
 			initialEntries: [initialPath]
 		});
 
-	if (onNavigate) {
-		history.listen(onNavigate);
-	}
+	console.log(onNavigate);
+
+	if (onNavigate) history.listen(onNavigate);
 
 	ReactDOM.render(<App onSignIn={onSignIn} history={history} />, el);
 

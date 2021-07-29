@@ -10,7 +10,6 @@ const generateClassName = createGenerateClassName({
 });
 
 function App({ history }) {
-	console.log(history);
 	return (
 		<div>
 			<StylesProvider generateClassName={generateClassName}>

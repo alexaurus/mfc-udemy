@@ -1,6 +1,5 @@
 import { mount } from "auth/AuthApp";
 import React, { useRef, useEffect } from "react";
-
 import { useHistory } from "react-router-dom";
 
 export default ({ onSignIn }) => {
@@ -13,13 +12,15 @@ export default ({ onSignIn }) => {
 			onNavigate: ({ pathname: nextPathname }) => {
 				const { pathname } = history.location;
 
-				if (pathname !== nextPathname) history.push(nextPathname);
+				if (pathname !== nextPathname) {
+					history.push(nextPathname);
+				}
 			},
 			onSignIn
 		});
 
 		history.listen(onParentNavigate);
-	});
+	}, []);
 
 	return <div ref={ref} />;
 };

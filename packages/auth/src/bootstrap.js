@@ -11,8 +11,6 @@ const mount = (el, { onSignIn, onNavigate, defaultHistory, initialPath }) => {
 			initialEntries: [initialPath]
 		});
 
-	console.log(onNavigate);
-
 	if (onNavigate) {
 		history.listen(onNavigate);
 	}
